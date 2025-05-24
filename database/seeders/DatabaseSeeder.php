@@ -19,16 +19,16 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
 
-        // $user = User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        //     'password' => Hash::make('password'),
-        //     'id' => 2,
-        // ]);
+        $user = User::factory()->create([
+            'name' => 'Test User',
+            'email' => 'test@example.com',
+            'password' => Hash::make('password'),
+            'id' => 2,
+        ]);
 
-        // // Assign role to the user
-        // $role = Role::firstOrCreate(['name' => 'User']);
-        // $user->assignRole($role);
+        // Assign role to the user
+        $role = Role::firstOrCreate(['name' => 'User']);
+        $user->assignRole($role);
 
 
 

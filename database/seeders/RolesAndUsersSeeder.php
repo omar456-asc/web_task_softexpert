@@ -15,32 +15,32 @@ class RolesAndUsersSeeder extends Seeder
         $managerRole = Role::firstOrCreate(['name' => 'Manager']);
         $userRole = Role::firstOrCreate(['name' => 'User']);
 
-        // // Create a manager
-        // $manager = User::firstOrCreate([
-        //     'email' => 'manager@example.com',
-        // ], [
-        //     'name' => 'Manager',
-        //     'password' => Hash::make('password'),
-        //     'id' => 1,
-        // ]);
-        // $manager->assignRole($managerRole);
+        // Create a manager
+        $manager = User::firstOrCreate([
+            'email' => 'manager@example.com',
+        ], [
+            'name' => 'Manager',
+            'password' => Hash::make('password'),
+            'id' => 1,
+        ]);
+        $manager->assignRole($managerRole);
 
-        // // Create a regular user
-        // $user = User::firstOrCreate([
-        //     'email' => 'user@example.com',
-        // ], [
-        //     'name' => 'User',
-        //     'password' => Hash::make('password'),
-        //     'id' => 2,
-        // ]);
-        // $user->assignRole($userRole);
+        // Create a regular user
+        $user = User::firstOrCreate([
+            'email' => 'user@example.com',
+        ], [
+            'name' => 'User',
+            'password' => Hash::make('password'),
+            'id' => 2,
+        ]);
+        $user->assignRole($userRole);
         // create a second user
         $user2 = User::firstOrCreate([
             'email' => 'user2@example.com',
         ], [
             'name' => 'User2',
             'password' => Hash::make('password'),
-            'id' => 4,
+            'id' => 3,
         ]);
         $user2->assignRole($userRole);
 
