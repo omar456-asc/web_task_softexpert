@@ -1,0 +1,130 @@
+{
+  "info": {
+    "_postman_id": "b1e2c3d4-e5f6-7890-abcd-ef1234567890",
+    "name": "Task Management API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": "Postman collection for Task Management API endpoints."
+  },
+  "item": [
+    {
+      "name": "Get All Tasks",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/tasks",
+          "host": ["{{base_url}}"],
+          "path": ["api", "tasks"]
+        }
+      }
+    },
+    {
+      "name": "Create Task",
+      "request": {
+        "method": "POST",
+        "header": [
+          {"key": "Content-Type", "value": "application/json"}
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Sample Task\",\n  \"description\": \"Task description\",\n  \"assignee_id\": 1,\n  \"due_date\": \"2025-06-01\",\n  \"status\": \"pending\"\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/api/tasks",
+          "host": ["{{base_url}}"],
+          "path": ["api", "tasks"]
+        }
+      }
+    },
+    {
+      "name": "Get Task by ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/tasks/1",
+          "host": ["{{base_url}}"],
+          "path": ["api", "tasks", "1"]
+        }
+      }
+    },
+    {
+      "name": "Update Task",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {"key": "Content-Type", "value": "application/json"}
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Updated Task\",\n  \"description\": \"Updated description\",\n  \"assignee_id\": 1,\n  \"due_date\": \"2025-06-10\",\n  \"status\": \"in_progress\"\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/api/tasks/1",
+          "host": ["{{base_url}}"],
+          "path": ["api", "tasks", "1"]
+        }
+      }
+    },
+    {
+      "name": "Update Task Status",
+      "request": {
+        "method": "PATCH",
+        "header": [
+          {"key": "Content-Type", "value": "application/json"}
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"status\": \"completed\"\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/api/tasks/1/status",
+          "host": ["{{base_url}}"],
+          "path": ["api", "tasks", "1", "status"]
+        }
+      }
+    },
+    {
+      "name": "Add Task Dependencies",
+      "request": {
+        "method": "POST",
+        "header": [
+          {"key": "Content-Type", "value": "application/json"}
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"dependencies\": [2, 3]\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/api/tasks/1/dependencies",
+          "host": ["{{base_url}}"],
+          "path": ["api", "tasks", "1", "dependencies"]
+        }
+      }
+    },
+    {
+        "name":"Login",
+        "request": {
+          "method": "POST",
+          "header": [
+            {"key": "Content-Type", "value": "application/json"}
+          ],
+          "body": {
+            "mode": "raw",
+            "raw": "{\n  \"email\": \" 'manager@example.com'\",\n  \"password\": \"password\"\n}"
+            },
+            "url": {
+                "raw": "{{base_url}}/api/login",
+                "host": ["{{base_url}}"],
+                "path": ["api", "login"]
+                }
+            }
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://tm-softexpert.test/"
+    }
+  ]
+}
