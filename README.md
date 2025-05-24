@@ -59,3 +59,47 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+## Getting Started
+
+### Running Locally
+
+1. Install PHP (>=8.2), Composer, and SQLite (or your preferred database) on your machine.
+2. Install dependencies:
+   ```sh
+   composer install
+   ```
+3. Copy the example environment file and set your configuration:
+   ```sh
+   cp .env.example .env
+   php artisan key:generate
+   ```
+4. Run database migrations (and seeders if needed):
+   ```sh
+   php artisan migrate --seed
+   ```
+5. Start the local development server:
+   ```sh
+   php artisan serve
+   ```
+6. The API will be available at `http://localhost:8000` by default.
+
+### Running with Docker
+
+1. Build the Docker image:
+   ```sh
+   docker build -t web-task-soft-expert .
+   ```
+2. Run the Docker container:
+   ```sh
+   docker run -p 9000:9000 --name web-task-soft-expert web-task-soft-expert
+   ```
+   - The application will be running on port 9000 inside the container.
+   - You may need to configure your web server (e.g., Nginx) to proxy requests to the container's PHP-FPM service.
+
+3. (Optional) For development, you can mount your code as a volume:
+   ```sh
+   docker run -p 9000:9000 -v $(pwd):/var/www --name web-task-soft-expert web-task-soft-expert
+   ```
+
+---
