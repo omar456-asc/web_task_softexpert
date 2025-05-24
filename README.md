@@ -84,6 +84,10 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
    ```
 6. The API will be available at `http://localhost:8000` by default.
 
+7. Use the manager user to log in with the following credentials:
+    - **Email:** `manager@example.com`
+    - **Password:** `password`
+
 ### Running with Docker
 
 1. Build the Docker image:
