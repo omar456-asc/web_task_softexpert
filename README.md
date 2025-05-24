@@ -106,5 +106,7 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 
 ## API Documentation & Tools
 
-- **Postman Collection:** Import `postman_collection.json` into Postman to test all API endpoints.
+  
+![Entity Relationship Diagram](erd.png)
+
 - **ERD:** See `erd.png` for the Entity Relationship Diagram of the database.
